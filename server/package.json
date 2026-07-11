@@ -1,0 +1,20 @@
+{
+  "name": "rohaan-portfolio-server",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Standalone Express + MySQL API for the Rohaan Nadeem portfolio contact form. Not part of the Next.js static export — deploy separately on a Node-capable host if you move off GitHub Pages.",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mysql2": "^3.11.0"
+  }
+}
