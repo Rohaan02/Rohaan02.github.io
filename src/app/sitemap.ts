@@ -28,7 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   return [...staticRoutes, ...dynamicRoutes].map((route) => ({
-    url: `${site.siteUrl}${route}`,
+    url: `${site.siteUrl}${route === "" ? "/" : `${route}/`}`,
     lastModified: new Date(),
   }));
 }
