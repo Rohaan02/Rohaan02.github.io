@@ -24,6 +24,8 @@ export type CustomProject = {
   longDescription: string;
   tech: string[];
   highlights: string[];
+  // Optional demo video — add a URL here once available (e.g. a YouTube/Loom link).
+  videoUrl?: string;
 };
 
 export const wordpressProjects: WordpressProject[] = [
@@ -193,38 +195,6 @@ export const universityProjects: UniversityProject[] = [
 
 export const customProjects: CustomProject[] = [
   {
-    slug: "amica-digital-services",
-    name: "Amica Digital Services",
-    company: "Heights Studio",
-    liveUrl: "https://amicadigitalservices.com/",
-    description:
-      "A React + Node.js marketing platform for an AI-automation agency, built around a weighted lead-scoring intake form that auto-routes prospects to tailored email sequences.",
-    longDescription:
-      "Built the full client-facing platform for Amica Digital Services, an AI-automation and growth-marketing agency: a multi-page React (Vite) site covering Home, Services (with dynamic per-service detail pages), Pricing, About, a Blog, and a client case study, backed by an Express + Nodemailer API for transactional email. The centerpiece is a Formik/Yup-validated intake form that runs every submission through a custom weighted scoring algorithm — monthly and setup budget, timeline, decision-making authority, industry vertical, interest in AI automation, existing CRM, and response-time expectations — to compute a 0–100 fit score, then instantly branches the visitor to a Qualified, Semi-Qualified, or Not-Qualified outcome screen while the backend fires the matching email template over Hostinger Titan SMTP.",
-    tech: ["React", "Vite", "Tailwind CSS", "React Router", "Formik", "Yup", "Node.js", "Express.js", "Nodemailer"],
-    highlights: [
-      "Custom weighted lead-scoring engine (0–100) that classifies prospects as Qualified, Semi-Qualified, or Not-Qualified in real time.",
-      "Automated, tier-specific email delivery (qualified lead, semi-qualified lead, team notification, welcome email) via an Express + Nodemailer API.",
-      "Dedicated intake variant and messaging for the care-agency industry vertical, plus dynamic per-route SEO metadata across the site.",
-    ],
-  },
-  {
-    slug: "amica-digital-italy",
-    name: "Amica Digital — Italian Edition",
-    company: "Heights Studio",
-    liveUrl: "https://amicadigital.it/",
-    description:
-      "The Italian-market localization of Amica Digital Services — the same React/Node.js platform fully translated with EN/IT language switching.",
-    longDescription:
-      "Localized the Amica Digital Services platform for the Italian market at amicadigital.it, adding full internationalization with react-i18next and automatic browser-language detection across separate English and Italian translation bundles. It shares the same architecture as the English platform — the multi-page React (Vite) front end, the Formik/Yup lead-qualification intake flow with weighted scoring, and the Express + Nodemailer backend for tier-based transactional email — adapted end-to-end for an Italian-speaking audience, and deployed as an independent frontend/backend from the primary site.",
-    tech: ["React", "Vite", "react-i18next", "Tailwind CSS", "React Router", "Formik", "Yup", "Node.js", "Express.js", "Nodemailer"],
-    highlights: [
-      "Full EN/IT internationalization with react-i18next and automatic browser-language detection.",
-      "Same lead-scoring intake and tiered email-automation engine as the English platform, localized for the Italian market.",
-      "Independently deployed frontend and backend serving amicadigital.it alongside amicadigitalservices.com.",
-    ],
-  },
-  {
     slug: "rislix",
     name: "Rislix — Cybersecurity, GRC & AI Governance",
     company: "Rislix",
@@ -249,6 +219,66 @@ export const customProjects: CustomProject[] = [
       "11-service catalog, 6-tier pricing, 4 case studies, and a filterable 10-article knowledge base across a fully-routed multi-page React site.",
       "Contact form delivers email via the Microsoft Graph API (OAuth2 client-credentials flow through Azure MSAL) instead of plain SMTP — separate admin-notification and user-confirmation messages per submission.",
       "Git-pull-based cPanel deployment workflow for zero-build-on-server production releases.",
+    ],
+  },
+  {
+    slug: "amica-digital-services",
+    name: "Amica Digital Services",
+    company: "Heights Studio",
+    liveUrl: "https://amicadigitalservices.com/",
+    description:
+      "A React + Node.js marketing platform for an AI-automation agency, built around a weighted lead-scoring intake form that auto-routes prospects to tailored email sequences.",
+    longDescription:
+      "Built the full client-facing platform for Amica Digital Services, an AI-automation and growth-marketing agency: a multi-page React (Vite) site covering Home, Services (with dynamic per-service detail pages), Pricing, About, a Blog, and a client case study, backed by an Express + Nodemailer API for transactional email. The centerpiece is a Formik/Yup-validated intake form that runs every submission through a custom weighted scoring algorithm — monthly and setup budget, timeline, decision-making authority, industry vertical, interest in AI automation, existing CRM, and response-time expectations — to compute a 0–100 fit score, then instantly branches the visitor to a Qualified, Semi-Qualified, or Not-Qualified outcome screen while the backend fires the matching email template over Hostinger Titan SMTP.",
+    tech: ["React", "Vite", "Tailwind CSS", "React Router", "Formik", "Yup", "Node.js", "Express.js", "Nodemailer"],
+    highlights: [
+      "Custom weighted lead-scoring engine (0–100) that classifies prospects as Qualified, Semi-Qualified, or Not-Qualified in real time.",
+      "Automated, tier-specific email delivery (qualified lead, semi-qualified lead, team notification, welcome email) via an Express + Nodemailer API.",
+      "Dedicated intake variant and messaging for the care-agency industry vertical, plus dynamic per-route SEO metadata across the site.",
+    ],
+  },
+  {
+    slug: "archer-type-grc-platform",
+    name: "Archer-Type GRC Platform",
+    company: "Rislix",
+    liveUrl: "https://rislix.com/trax",
+    // Demo video pending — add a videoUrl here once one is available.
+    description:
+      "A custom multi-tenant Governance, Risk & Compliance platform built as an Archer-style alternative — risk register, compliance framework management, evidence workflows, audits, and asset inventory.",
+    longDescription:
+      "Architected and built a multi-tenant GRC platform for Rislix comparable in scope to enterprise tools like RSA Archer — a Vite + React (TypeScript) frontend with shadcn/ui, backed by an AdonisJS v6 (TypeScript) API over MySQL via the Lucid ORM. The platform supports multiple isolated tenant organizations under a 14-role RBAC model, with JWT authentication and an OTP-based password reset flow (6-digit code, 5-minute expiry, delivered by email). At its core is a full compliance framework library — ISO 27001 (41 clauses, 93 Annex A controls) and PCI DSS (200+ controls across all 12 requirements, presented in a two-level collapsible sidebar hierarchy) — with per-clause and per-control evidence upload, and an approve/reject review workflow driving each framework's live completion percentage. The risk register uses a 6-tab layout (People, Process, Technology, AI Risks, Opportunities, Legends) with 1–3 severity scoring and a risk heat map, alongside a dedicated Asset Inventory module that auto-calculates a C×I×A asset score per item and supports bulk creation via Excel template upload with per-row validation. Rounding out the platform: gap assessments, policy management, audit tracking, a task tracker, Excel/CSV reporting, and a full activity-log audit trail. The contact/notification email service was ported directly from the Rislix marketing site's Microsoft Graph API integration, and the app deploys to AWS EC2 behind Nginx (reverse-proxied at rislix.com/trax) under PM2.",
+    tech: [
+      "React",
+      "Vite",
+      "TypeScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "AdonisJS",
+      "MySQL",
+      "Lucid ORM",
+      "JWT Auth",
+      "Microsoft Graph API",
+    ],
+    highlights: [
+      "Multi-tenant architecture with 14-role RBAC, JWT auth, and OTP-based (6-digit, 5-minute expiry) password reset.",
+      "Full compliance framework library — ISO 27001 (41 clauses / 93 controls) and PCI DSS (200+ controls across 12 requirements) — with per-control evidence upload and an approve/reject review workflow driving live completion percentages.",
+      "6-category risk register with severity scoring and a heat map, plus an Asset Inventory module with auto-calculated C×I×A scoring and bulk Excel upload.",
+    ],
+  },
+  {
+    slug: "amica-digital-italy",
+    name: "Amica Digital — Italian Edition",
+    company: "Heights Studio",
+    liveUrl: "https://amicadigital.it/",
+    description:
+      "The Italian-market localization of Amica Digital Services — the same React/Node.js platform fully translated with EN/IT language switching.",
+    longDescription:
+      "Localized the Amica Digital Services platform for the Italian market at amicadigital.it, adding full internationalization with react-i18next and automatic browser-language detection across separate English and Italian translation bundles. It shares the same architecture as the English platform — the multi-page React (Vite) front end, the Formik/Yup lead-qualification intake flow with weighted scoring, and the Express + Nodemailer backend for tier-based transactional email — adapted end-to-end for an Italian-speaking audience, and deployed as an independent frontend/backend from the primary site.",
+    tech: ["React", "Vite", "react-i18next", "Tailwind CSS", "React Router", "Formik", "Yup", "Node.js", "Express.js", "Nodemailer"],
+    highlights: [
+      "Full EN/IT internationalization with react-i18next and automatic browser-language detection.",
+      "Same lead-scoring intake and tiered email-automation engine as the English platform, localized for the Italian market.",
+      "Independently deployed frontend and backend serving amicadigital.it alongside amicadigitalservices.com.",
     ],
   },
 ];

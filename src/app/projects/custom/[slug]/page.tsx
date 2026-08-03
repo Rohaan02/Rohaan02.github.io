@@ -74,6 +74,20 @@ export default async function CustomProjectDetailPage({
                 <span className="material-symbols-outlined text-lg">open_in_new</span>
               </a>
             </GlassCard>
+            {project.videoUrl ? (
+              <GlassCard className="p-6 text-center space-y-4">
+                <p className="text-on-surface-variant">Watch a walkthrough</p>
+                <a
+                  href={project.videoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 w-full px-6 py-3 glass-card text-on-surface font-bold rounded-xl border border-white/10 hover:bg-white/5 transition-all"
+                >
+                  Watch Demo Video
+                  <span className="material-symbols-outlined text-lg">play_circle</span>
+                </a>
+              </GlassCard>
+            ) : null}
             <GlassCard className="p-6">
               <h3 className="font-bold text-lg mb-4">Tech Stack</h3>
               <div className="flex flex-wrap gap-2">
