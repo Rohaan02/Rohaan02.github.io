@@ -19,6 +19,18 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+**If `npm run dev` says "Another next dev server is already running"** (a stale/orphaned instance holding Next.js's dev lockfile), it gives you the exact PID to kill. Either run the command it suggests directly:
+
+```bash
+taskkill /PID <PID_FROM_THE_MESSAGE> /F
+```
+
+or, to find and kill whatever's bound to port 3000 without needing the PID:
+
+```bash
+netstat -ano | grep ':3000 ' | grep LISTENING | awk '{print $NF}' | xargs -I{} taskkill //PID {} //F
+```
+
 ## Contact form (no configuration needed)
 
 The contact form (`src/components/contact/ContactForm.tsx`) posts directly to [FormSubmit.co](https://formsubmit.co), which forwards submissions as an email to `site.email` (`src/data/site.ts`) — no API key, account, or backend required.
@@ -57,7 +69,7 @@ The Experience timeline currently shows an icon badge per company. To use a real
 public/logos/{companySlug}.png
 ```
 
-using one of these slugs (see `src/data/experience.ts`): `igknightech`, `rislix`, `heights-studio`, `expertscloud`, `vision-plus`, `superior-tech-solutions`. No code changes needed — `src/components/experience/CompanyBadge.tsx` automatically prefers the logo file if it exists at build time.
+using one of these slugs (see `src/data/experience.ts`): `heights-studio`, `rislix`, `expertscloud`, `vision-plus`, `superior-tech-solutions`. No code changes needed — `src/components/experience/CompanyBadge.tsx` automatically prefers the logo file if it exists at build time.
 
 ## Upgrading the contact form to the MySQL backend
 
@@ -77,3 +89,82 @@ To use it once you have a Node-capable host (Railway, Render, a VPS, etc.):
 - `src/components/` — reusable UI, layout, and section components
 - `src/data/` — all portfolio content (experience, projects, services, publications, etc.) as typed TypeScript data — edit these files to update site content
 - `server/` — standalone future-use Express + MySQL API (see above)
+
+### Repo directory tree
+
+```
+Rohaan02.github.io/
+├── .github/
+│   └── workflows/
+│       └── deploy.yml              # builds + deploys to GitHub Pages via GitHub Actions
+├── public/
+│   ├── documents/
+│   │   └── Rohaan-Nadeem-CV.pdf
+│   ├── images/
+│   │   ├── certificates/           # MOOC/certification images (9 files)
+│   │   ├── clients/                # WordPress client logos (14 files)
+│   │   └── profile.jpg
+│   ├── google17a3b08f6ffe1a88.html # Google Search Console site verification
+│   └── logos/                      # drop real employer logo PNGs here (see above)
+├── server/                         # standalone Express + MySQL API (future use, not part of the Next.js build)
+│   ├── routes/
+│   │   └── contact.js
+│   ├── .env.example
+│   ├── db.js
+│   ├── index.js
+│   ├── package.json
+│   └── schema.sql
+├── src/
+│   ├── app/                        # routes (App Router)
+│   │   ├── about/page.tsx
+│   │   ├── contact/page.tsx
+│   │   ├── experience/page.tsx
+│   │   ├── moocs/page.tsx
+│   │   ├── projects/
+│   │   │   ├── custom/
+│   │   │   │   ├── [slug]/page.tsx
+│   │   │   │   └── page.tsx
+│   │   │   ├── university/page.tsx
+│   │   │   ├── wordpress/page.tsx
+│   │   │   └── page.tsx
+│   │   ├── researches/
+│   │   │   ├── [slug]/page.tsx
+│   │   │   └── page.tsx
+│   │   ├── services/
+│   │   │   ├── [slug]/page.tsx
+│   │   │   └── page.tsx
+│   │   ├── globals.css
+│   │   ├── icon.png                # favicon, generated from the profile photo
+│   │   ├── layout.tsx              # fonts, metadata, Person JSON-LD, Navbar/Footer shell
+│   │   ├── page.tsx                # home page
+│   │   ├── robots.ts
+│   │   └── sitemap.ts
+│   ├── components/
+│   │   ├── contact/ContactForm.tsx
+│   │   ├── experience/             # CompanyBadge, Timeline, TimelineItem
+│   │   ├── home/                   # per-section home page previews (Hero, AboutPreview, etc.)
+│   │   ├── layout/                 # Navbar, Footer
+│   │   ├── moocs/CertificateCard.tsx
+│   │   ├── projects/                # CategoryCard, ProjectCard
+│   │   ├── research/PublicationCard.tsx
+│   │   ├── services/ServiceCard.tsx
+│   │   ├── shared/RevealOnScroll.tsx
+│   │   └── ui/                     # GlassCard, Badge, PageHero, PrimaryButton, SectionHeading, SocialIcon, StatTile
+│   ├── data/                       # all site content as typed TS data — edit these to update content
+│   │   ├── education.ts
+│   │   ├── experience.ts
+│   │   ├── moocs.ts
+│   │   ├── projects.ts
+│   │   ├── publications.ts
+│   │   ├── services.ts
+│   │   ├── site.ts
+│   │   └── skills.ts
+│   └── lib/
+│       └── useReveal.ts            # scroll-reveal IntersectionObserver hook
+├── .env.example                    # NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+├── .gitignore
+├── next.config.ts                  # output: "export", trailingSlash, unoptimized images
+├── package.json
+├── tailwind.config.ts              # design tokens (colors, spacing, fonts)
+└── tsconfig.json
+```

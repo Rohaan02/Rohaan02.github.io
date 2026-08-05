@@ -102,17 +102,18 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
       className={`${jakarta.variable} ${inter.variable} ${geist.variable} h-full antialiased`}
     >
-      {/* eslint-disable-next-line @next/next/no-page-custom-font -- global icon font, loaded once in the root layout shared by every route */}
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
-        precedence="default"
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
-      />
-      <body className="min-h-full flex flex-col font-body-md">
+      <head>
+        {/* eslint-disable-next-line @next/next/no-page-custom-font -- global icon font, loaded once in the root layout shared by every route */}
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+      </head>
+      <body className="min-h-full flex flex-col font-body-md" suppressHydrationWarning>
         <Navbar />
         <main className="flex-1 pt-20">{children}</main>
         <Footer />

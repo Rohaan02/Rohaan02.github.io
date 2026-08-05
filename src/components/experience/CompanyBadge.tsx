@@ -3,7 +3,6 @@ import path from "node:path";
 import Image from "next/image";
 
 const iconByCompany: Record<string, string> = {
-  igknightech: "engineering",
   rislix: "security",
   "heights-studio": "apartment",
   expertscloud: "cloud",
@@ -12,7 +11,6 @@ const iconByCompany: Record<string, string> = {
 };
 
 const colorByCompany: Record<string, string> = {
-  igknightech: "text-primary bg-primary/20",
   rislix: "text-secondary bg-secondary/20",
   "heights-studio": "text-tertiary bg-tertiary/20",
   expertscloud: "text-primary bg-primary/20",

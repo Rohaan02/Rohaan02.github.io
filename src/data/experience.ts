@@ -12,19 +12,21 @@ export type ExperienceItem = {
 
 export const experience: ExperienceItem[] = [
   {
-    slug: "igknightech-software-engineer",
-    company: "IgknighTech",
-    companySlug: "igknightech",
-    role: "Software Engineer",
-    period: "May 2026 — Present",
-    location: "Johar Town, Lahore",
+    slug: "heights-studio-full-stack-developer",
+    company: "Heights Studio",
+    companySlug: "heights-studio",
+    role: "Full Stack Developer",
+    period: "December 2025 — Present",
+    location: "Wapda Town, Lahore, Pakistan",
     current: true,
     description:
-      "Architecting and developing high-impact web applications across a versatile stack, transitioning seamlessly between front-end and back-end responsibilities to deliver clean, maintainable code that meets complex client requirements.",
+      "Architecting and building scalable, high-impact web applications across multiple domains and a versatile stack, transitioning seamlessly between front-end and back-end responsibilities to deliver clean, maintainable code that ensures high performance, responsiveness, and a seamless user experience.",
     highlights: [
-      "Building applications using MERN (MongoDB, Express, React, Node.js), Go (Golang), and Ruby on Rails.",
-      "Delivering end-to-end features across the full stack with modern frameworks.",
-      "Collaborating closely with the engineering team under the mentorship of Team Lead Jawad to streamline workflows and resolve complex engineering challenges.",
+      "Building applications using MERN (MongoDB, Express, React, Node.js), Go (Golang), and Ruby on Rails, with React.js front-end interfaces and API/server-side logic on the back end.",
+      "Delivering end-to-end features across the full stack to meet complex client requirements, from architecture through to a responsive, high-performance UI.",
+      "Handled end-to-end deployment and hosting on AWS and Hostinger, including server configuration, VPC setup, and performance optimization.",
+      "Used Docker for containerization and n8n for workflow automation to streamline development and reduce manual processes.",
+      "Collaborated closely with the engineering team under the mentorship of Team Lead Jawad to resolve complex engineering challenges; also gained hands-on experience with WordPress development and customization.",
     ],
   },
   {
@@ -37,25 +39,6 @@ export const experience: ExperienceItem[] = [
     current: true,
     description:
       "Bridging technology and governance — supporting Governance, Risk, and Compliance initiatives alongside full-stack engineering work, aligning technical practices with security and compliance standards.",
-  },
-  {
-    slug: "heights-studio-full-stack-developer",
-    company: "Heights Studio",
-    companySlug: "heights-studio",
-    role: "Full Stack Developer",
-    period: "December 2025 — May 2026 (6 months)",
-    location: "Wapda Town, Lahore, Pakistan",
-    current: false,
-    description:
-      "Built and maintained scalable web-based applications across multiple domains, contributing to both frontend and backend development to ensure high performance, responsiveness, and seamless user experience.",
-    highlights: [
-      "Developed dynamic, user-friendly interfaces using React.js on the frontend.",
-      "Worked with APIs and server-side logic to support application functionality and integrations.",
-      "Handled end-to-end deployment and hosting on AWS and Hostinger, including server configuration and performance optimization.",
-      "Used Docker for containerization to streamline development and deployment workflows.",
-      "Designed and implemented workflow automations with n8n to reduce manual processes.",
-      "Gained hands-on experience with AWS services, VPC configuration, and WordPress development.",
-    ],
   },
   {
     slug: "expertscloud-associate-software-engineer",
