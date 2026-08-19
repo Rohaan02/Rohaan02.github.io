@@ -12,7 +12,7 @@ export type ExperienceItem = {
 
 export const experience: ExperienceItem[] = [
   {
-    slug: "igknighttech-full-stack-developer",
+    slug: "igknighttech-software-engineer-full-stack-developer",
     company: "IgknightTech",
     companySlug: "igknighttech",
     role: "Software Engineer (Full Stack Developer)",
