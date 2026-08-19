@@ -1,11 +1,9 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import PrimaryButton from "@/components/ui/PrimaryButton";
+import TechStackShowcase from "./TechStackShowcase";
 import { site } from "@/data/site";
-
-const HeroVisual = dynamic(() => import("./HeroVisual"), { ssr: false });
 
 function RotatingTagline() {
   const [index, setIndex] = useState(0);
@@ -57,7 +55,7 @@ export default function Hero() {
         </div>
 
         <div className="lg:col-span-5">
-          <HeroVisual />
+          <TechStackShowcase />
         </div>
       </div>
     </section>

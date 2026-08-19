@@ -12,12 +12,12 @@ export type ExperienceItem = {
 
 export const experience: ExperienceItem[] = [
   {
-    slug: "heights-studio-full-stack-developer",
-    company: "Heights Studio",
-    companySlug: "heights-studio",
-    role: "Full Stack Developer",
+    slug: "igknighttech-full-stack-developer",
+    company: "IgknightTech",
+    companySlug: "igknighttech",
+    role: "Software Engineer (Full Stack Developer)",
     period: "December 2025 — Present",
-    location: "Wapda Town, Lahore, Pakistan",
+    location: "Johar Town, Lahore, Pakistan",
     current: true,
     description:
       "Architecting and building scalable, high-impact web applications across multiple domains and a versatile stack, transitioning seamlessly between front-end and back-end responsibilities to deliver clean, maintainable code that ensures high performance, responsiveness, and a seamless user experience.",

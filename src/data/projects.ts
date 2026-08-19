@@ -197,7 +197,7 @@ export const customProjects: CustomProject[] = [
   {
     slug: "caleo-pro",
     name: "Caleo Pro",
-    company: "Heights Studio",
+    company: "Igknight Tech",
     liveUrl: "https://www.caleopro.com/",
     description:
       "A multi-tenant, serverless workforce-management SaaS for U.S. public-safety agencies, built on GraphQL/Apollo over AWS Lambda with a hardened GovCloud deployment.",
@@ -236,7 +236,17 @@ export const customProjects: CustomProject[] = [
       "A React + Node.js marketing platform for an AI-automation agency, built around a weighted lead-scoring intake form that auto-routes prospects to tailored email sequences.",
     longDescription:
       "Built the full client-facing platform for Amica Digital Services, an AI-automation and growth-marketing agency: a multi-page React (Vite) site covering Home, Services (with dynamic per-service detail pages), Pricing, About, a Blog, and a client case study, backed by an Express + Nodemailer API for transactional email. The centerpiece is a Formik/Yup-validated intake form that runs every submission through a custom weighted scoring algorithm — monthly and setup budget, timeline, decision-making authority, industry vertical, interest in AI automation, existing CRM, and response-time expectations — to compute a 0–100 fit score, then instantly branches the visitor to a Qualified, Semi-Qualified, or Not-Qualified outcome screen while the backend fires the matching email template over Hostinger Titan SMTP.",
-    tech: ["React", "Vite", "Tailwind CSS", "React Router", "Formik", "Yup", "Node.js", "Express.js", "Nodemailer"],
+    tech: [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "React Router",
+      "Formik",
+      "Yup",
+      "Node.js",
+      "Express.js",
+      "Nodemailer",
+    ],
     highlights: [
       "Custom weighted lead-scoring engine (0–100) that classifies prospects as Qualified, Semi-Qualified, or Not-Qualified in real time.",
       "Automated, tier-specific email delivery (qualified lead, semi-qualified lead, team notification, welcome email) via an Express + Nodemailer API.",
@@ -279,7 +289,7 @@ export const customProjects: CustomProject[] = [
     description:
       "The marketing and lead-generation site for Rislix, a cybersecurity, GRC, and AI-governance consultancy — a multi-page React platform with Microsoft Graph-powered transactional email.",
     longDescription:
-      "Built the public-facing platform for Rislix, a cybersecurity, GRC (Governance, Risk & Compliance), and AI-governance consultancy: a multi-page React (Vite) site spanning Home, an 11-service \"What We Do\" catalog, a \"Who We Help\" segment for SMEs, entrepreneurs, and directors, a 6-tier pricing page, 4 client case studies, an About Us page, and a filterable 10-article Knowledge Centre. The contact flow is backed by an Express API that authenticates against Azure AD via MSAL's confidential-client OAuth2 flow and sends both an admin lead-notification email and a user confirmation email through the Microsoft Graph API's sendMail endpoint, rather than a conventional SMTP relay. The frontend ships through a git-pull-based cPanel deployment workflow, with SEO handled via react-helmet-async.",
+      'Built the public-facing platform for Rislix, a cybersecurity, GRC (Governance, Risk & Compliance), and AI-governance consultancy: a multi-page React (Vite) site spanning Home, an 11-service "What We Do" catalog, a "Who We Help" segment for SMEs, entrepreneurs, and directors, a 6-tier pricing page, 4 client case studies, an About Us page, and a filterable 10-article Knowledge Centre. The contact flow is backed by an Express API that authenticates against Azure AD via MSAL\'s confidential-client OAuth2 flow and sends both an admin lead-notification email and a user confirmation email through the Microsoft Graph API\'s sendMail endpoint, rather than a conventional SMTP relay. The frontend ships through a git-pull-based cPanel deployment workflow, with SEO handled via react-helmet-async.',
     tech: [
       "React",
       "Vite",
@@ -307,7 +317,18 @@ export const customProjects: CustomProject[] = [
       "The Italian-market localization of Amica Digital Services — the same React/Node.js platform fully translated with EN/IT language switching.",
     longDescription:
       "Localized the Amica Digital Services platform for the Italian market at amicadigital.it, adding full internationalization with react-i18next and automatic browser-language detection across separate English and Italian translation bundles. It shares the same architecture as the English platform — the multi-page React (Vite) front end, the Formik/Yup lead-qualification intake flow with weighted scoring, and the Express + Nodemailer backend for tier-based transactional email — adapted end-to-end for an Italian-speaking audience, and deployed as an independent frontend/backend from the primary site.",
-    tech: ["React", "Vite", "react-i18next", "Tailwind CSS", "React Router", "Formik", "Yup", "Node.js", "Express.js", "Nodemailer"],
+    tech: [
+      "React",
+      "Vite",
+      "react-i18next",
+      "Tailwind CSS",
+      "React Router",
+      "Formik",
+      "Yup",
+      "Node.js",
+      "Express.js",
+      "Nodemailer",
+    ],
     highlights: [
       "Full EN/IT internationalization with react-i18next and automatic browser-language detection.",
       "Same lead-scoring intake and tiered email-automation engine as the English platform, localized for the Italian market.",

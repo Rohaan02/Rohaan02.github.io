@@ -61,15 +61,9 @@ None of that gets a new site ranked by itself — Google has to crawl and index 
 6. **Cross-link your profiles** — add `https://rohaan02.github.io` to the "Website" field on your LinkedIn profile and your GitHub profile bio. This is arguably the single highest-leverage thing outside the code: it's what lets Google connect "Rohaan Nadeem the person" across the portfolio, LinkedIn, and GitHub as the same entity, which materially helps all three show up together for a name search.
 7. Be patient with the bare-name query specifically — a two-word personal name is inherently more competitive/ambiguous than a longer phrase, so it can take longer to rank even after indexing.
 
-## Adding real employer logos
+## Employer logos
 
-The Experience timeline currently shows an icon badge per company. To use a real logo instead, drop a PNG at:
-
-```
-public/logos/{companySlug}.png
-```
-
-using one of these slugs (see `src/data/experience.ts`): `heights-studio`, `rislix`, `expertscloud`, `vision-plus`, `superior-tech-solutions`. No code changes needed — `src/components/experience/CompanyBadge.tsx` automatically prefers the logo file if it exists at build time.
+The Experience timeline shows a real logo per company when one exists at `public/logos/{companySlug}.png`, falling back to an icon badge otherwise — `src/components/experience/CompanyBadge.tsx` checks for the file automatically at build time, no code changes needed. All current roles already have a real logo (`igknighttech`, `rislix`, `expertscloud`, `vision-plus`, `superior-tech-solutions`). To add one for a future role, just drop a PNG at that path using the matching `companySlug` from `src/data/experience.ts`.
 
 ## Upgrading the contact form to the MySQL backend
 

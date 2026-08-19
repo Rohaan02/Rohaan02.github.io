@@ -5,6 +5,8 @@ export const site = {
     "Full-Stack Software Engineer",
     "TypeScript & JavaScript Specialist",
     "MERN Stack Developer",
+    "Go (Golang) Developer",
+    "Ruby on Rails Developer",
     "Building Scalable Web Applications",
   ],
   location: "Lahore, Punjab, Pakistan",
